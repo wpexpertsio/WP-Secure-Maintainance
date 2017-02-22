@@ -4,7 +4,7 @@ Want to lock your site for Maintainance or Development? Then this is the right P
 ## Description
 Want to lock your site for Maintainance or Development? Then this is the right Plugin. Using WP Secure Maintainance you can lock the whole site with a seceret PIN.
 
-= Features: =
+## Features
 - Set password to protect your site for maintainance or development
 - Set your own logo or use default logo
 - Change placeholder text for WP Secure Maintainance login form
