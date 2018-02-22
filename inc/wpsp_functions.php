@@ -4,6 +4,7 @@
  * @author Mohammad Mursaleen
  * function to add PIN protection functionality
  */
+   
 if ( !is_admin() && !in_array( $GLOBALS['pagenow'], array( 'wp-login.php', 'wp-register.php' ) )   ) :
 
 
@@ -15,7 +16,8 @@ function wpsp_display_security_form(){
 
 
         $pin = wpsp_get_option('pin');  // Get saved PIN
-
+		
+    
 
         if ( isset($_COOKIE['wpsp_pass']) && $pin == $_COOKIE['wpsp_pass'] ) // to check if PIN cookie exist
             return false;
@@ -28,12 +30,23 @@ function wpsp_display_security_form(){
             return false;
 
         } else {
-
+       $color = wpsp_get_option('crb_background');  // Get saved background color
+	  // print_r($color);
             ?>
+             
             <style>
+			<?php if($color) { ?>
                 body {
+					
+                    background-color: <?php echo $color; ?> !important
+                }
+				<?php } else { ?>
+					                body {
+					
                     background-color: rgba(95, 158, 190, 0.22) !important
                 }
+
+				<?php	}?>
                 img.wpsp-logo {
                     border-radius: 50%;
                     box-shadow: 5px 5px 5px #5a5a5a;
@@ -99,7 +112,7 @@ function wpsp_display_security_form(){
             </style>
             <div class="container" >
                 <div class="wpsp-logo-div">
-                    <?php  if( wpsp_get_option('logo_image') != false ){ $logo_url = wpsp_get_option('logo_image'); } else { $logo_url =  plugins_url( 'img/default-logo.png', dirname(__FILE__) ); }?>
+                    <?php  if( wpsp_get_option('logo_image') != false ){ $logo_url = wp_get_attachment_url( wpsp_get_option('logo_image') ); } else { $logo_url =  plugins_url( 'img/default-logo.png', dirname(__FILE__) ); }?>
                     <img class="wpsp-logo" style="height:<?php echo wpsp_get_option('logo_width'); ?>  !important; width:<?php echo wpsp_get_option('logo_height'); ?> !important;" src="<?php echo $logo_url; ?>" alt="" >
                 </div>
                 <div class="wrapper">
@@ -129,3 +142,10 @@ add_action('init','wpsp_display_security_form',20 );
 
 
 endif;
+
+
+function wpsp_get_option( $key ) {
+	
+    return ( isset($key) && !empty($key) ) ? carbon_get_theme_option($key) : false ;
+
+}

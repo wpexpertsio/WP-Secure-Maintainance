@@ -1,29 +1,29 @@
 {
-    "name": "webdevstudios/cmb2",
-    "description": "CMB2 is a metabox, custom fields, and forms library for WordPress that will blow your mind.",
-    "license": "GPL-2.0+",
+    "name": "htmlburger/carbon-fields-plugin",
+    "description": "WordPress plugin loader for Carbon Fields.",
+    "license": "GPL-2.0",
+    "type": "wordpress-plugin",
+    "homepage": "http://carbonfields.net/",
     "authors": [
         {
-            "name": "WebDevStudios",
-            "email": "contact@webdevstudios.com",
-            "homepage": "https://github.com/WebDevStudios",
-            "role": "Developer"
+            "name": "atanas-angelov-dev",
+            "email": "atanas.angelov.dev@gmail.com"
         }
     ],
-    "keywords": ["wordpress", "plugin", "metabox"],
-    "homepage": "https://github.com/WebDevStudios/CMB2",
-    "type": "wordpress-plugin",
     "support": {
-        "issues": "https://github.com/WebDevStudios/CMB2/issues",
-        "source": "http://wordpress.org/support/plugin/cmb2"
+        "source": "https://github.com/htmlburger/carbon-fields",
+        "docs": "http://carbonfields.net/docs/",
+        "issues": "https://github.com/htmlburger/carbon-fields/issues",
+        "email": "wordpress@htmlburger.com"
+    },
+    "autoload": {
+        "psr-4": {
+            "Carbon_Fields_Plugin\\": "core/"
+        }
     },
     "require": {
-        "php": ">5.2.4"
-    },
-    "suggest": {
-        "composer/installers": "~1.0"
-    },
-    "require-dev": {
-        "phpunit/phpunit": "3.7.*"
+        "php": ">=5.3",
+        "composer/installers": "^1.0",
+        "htmlburger/carbon-fields": "2.1.1"
     }
 }
