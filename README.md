@@ -28,6 +28,14 @@ Just after activting set password from WP Secure Maintenance Settings tab and en
 
 ## Changelog
 
+**1.3**
+
+- Added compatibility with 4.9.2
+
+**1.2**
+
+- Add Carbon Fields.
+
 **1.1**
 
 - Fixed Bugs issues in back-end Settings area.
