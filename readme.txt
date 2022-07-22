@@ -3,8 +3,8 @@ Contributors: wpexpertsio
 Tags: Site security , Maintenance lock, Development, Maintenance
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=pay@objects.ws&item_name=Donation For Plugin
 Requires at least: 4.0
-Tested up to: 4.9.2
-Stable tag: 1.4
+Tested up to: 6.0
+Stable tag: 1.6
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -47,6 +47,19 @@ Just after activting set password from WP Secure Maintenance Settings tab and en
 
 
 == Changelog ==
+
+= 1.5 =
+- Fixed logo not being removed when we delete it from attachment.
+= 1.5 =
+- Added Custom CSS field
+- Replaced carbon fields library with default wordpress settings api
+
+= 1.4.1 =
+- Added compatibility with WordPress 5.0.3
+
+= 1.4 =
+- Minor Bug Fixes and improvements
+
 = 1.3 =
 - Added compatibility with 4.9.2
 
